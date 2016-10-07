@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Express Union Online</title>
+        <h:outputStylesheet name="css/theme.css" library="default" />
+    </h:head>
+    <h:body style="background-image: url('resources/default/images/pattern-1.png'); background-repeat: repeat; background-color: whitesmoke;">
+        
+        <div id="topbar">
+            <div class="logo">
+                <a href="welcomePrimefaces.xhtml" id="layout-logo">
+                    <h:graphicImage name="images/testimonial-3.png" style="vertical-align: middle; " library="default"/>
+                    <span class="logoTitle"><span class="firstTitle">Express Union</span> <span class="secondTitle">Online</span></span>
+                </a>
+            </div>
+
+            <div class="menuRight">
+                <h:form style="float: right;">
+                    <p:inputText placeholder="Search" style="margin-right: 10px;"/>
+                    <p:button value="Deconnexion" icon="fa fa-sign-out" style="margin-right: 10px;"/>
+                </h:form>
+            </div>
+        </div>
+        <div id="content" style="margin-top: 60px; left: 0px;  padding-left: 0px;">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-12 ui-lg-3" >
+                    <p:panel header="Options" style="left: 0px;">
+                        <h:form>
+                            <p:menu style="width: 100%; left: 0px;" >
+                                <p:submenu label="Paramètres de transfert">
+                                    <p:menuitem value="Gestion de mes béneficiaires" outcome="index" class="menu_active"/>
+                                    <p:menuitem value="Mes moyens de paiement" outcome="index" />
+                                </p:submenu>
+
+                                <p:submenu label="Mon compte">
+                                    <p:menuitem value="Informations personnelles" />
+                                    <p:menuitem value="Changer de mot de passe" outcome="index" />
+                                </p:submenu>
+                            </p:menu>
+                        </h:form>
+                    </p:panel>
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-9" >
+                    <p:panel header="Gestion de mes bénéficiaires">
+                        <h:form>
+                            <p:wizard showNavBar="true">
+                                <p:tab id="personne" title="Identité">
+                                    <p:panel header="Information Bénéficiare">
+
+                                        <p:messages />
+                                        <p:panelGrid columns="4" columnClasses="label, value" style="width: 100%;" styleClass="ui-noborder">
+                                            <p:outputLabel value="Nom : "/>
+                                            <p:inputText placeholder="Nom" class="input80"/>
+
+                                            <p:outputLabel value="Prenom : "/>
+                                            <p:inputText placeholder="Prenom" class="input80"/>
+
+                                            <p:outputLabel value="Téléphone : "/>
+                                            <p:inputText placeholder="Téléphone" class="input80"/>
+
+                                            <p:outputLabel value="Nom : "/>
+                                            <p:inputText placeholder="Nom" class="input80"/>
+                                        </p:panelGrid>
+
+                                    </p:panel>
+                                </p:tab>
+                                <p:tab id="adresse" title="Adresse">
+                                    <p:panel header="Zone bénéficiaire">
+
+                                        <p:messages />
+                                        <p:panelGrid columns="4" columnClasses="label, value" style="width: 100%; border: 0px;" styleClass="ui-noborder">
+                                            <p:outputLabel value="Lieu : "/>
+                                            <p:inputText placeholder="lieu" class="input80"/>
+
+                                            <p:outputLabel value="Dévise : "/>
+                                            <p:inputText placeholder="devise" class="input80"/>
+
+                                        </p:panelGrid>
+
+                                    </p:panel>
+                                </p:tab>
+                                <p:tab id="confirm" title="Confirmation">
+                                    
+                                    <p:panel header="Confirmation des données saisies">
+                                        <p:panelGrid columns="4" columnClasses="label, value" style="width: 100%; border: 0px;" styleClass="ui-noborder">
+                                            <p:outputLabel value="Nom : "/>
+                                            <p:outputLabel value="NJIMOLUH"/>
+
+                                            <p:outputLabel value="Prenom : "/>
+                                            <p:outputLabel value="Hamad Nasser"/>
+
+                                            <p:outputLabel value="Téléphone : "/>
+                                            <p:outputLabel value="+237 697807674"/>
+
+                                            <p:outputLabel value="Nom : "/>
+                                            <p:outputLabel value="Test"/>
+
+                                            <p:outputLabel value="Lieu : "/>
+                                            <p:outputLabel value="Douala"/>
+
+                                            <p:outputLabel value="Dévise : "/>
+                                            <p:outputLabel value="XAF "/>
+
+                                        </p:panelGrid>
+                                        <p:commandButton value="Ajouter"/>
+                                    </p:panel>
+                                </p:tab>
+                                
+                            </p:wizard>
+                        </h:form>
+                        <hr style="margin-top: 20px; margin-bottom: 20px;"/>
+                        <h:form id="form_beneficiaire">
+                            <p:dataTable id="beneficiaires" var="benef" selectionMode="single" emptyMessage="Pas de bénéficiaires">
+                                <p>Liste des bénéficiaires</p>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Nom"/>
+                                    </f:facet>
+                                    <h:outputText value="NJIMOLUH"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Prenom"/>
+                                    </f:facet>
+                                    <h:outputText value="Hamad Nasser"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Téléphone"/>
+                                    </f:facet>
+                                    <h:outputText value="+237 697807674"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Adresse"/>
+                                    </f:facet>
+                                    <h:outputText value="NJIMOLUH"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Options"/>
+                                    </f:facet>
+                                    <p:commandButton value="" icon="fa fa-edit"/>
+                                    <p:commandButton value="" icon="fa fa-remove"/>
+                                </p:column>
+                            </p:dataTable>
+                            
+                        </h:form>
+                    </p:panel>
+                </div>
+            </div>
+        </div>
+        
+    </h:body>
+</html>

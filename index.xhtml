@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Express Union Online</title>
+        
+        <h:outputStylesheet name="css/theme.css" library="default" />
+    </h:head>
+    <h:body style="background-image: url('resources/default/images/pattern-1.png'); background-repeat: repeat; background-color: whitesmoke;">
+        <br></br>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-3 ui-lg-3">
+                
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-6">
+                <div class="Container">
+                    <div class="Container50">
+                        <div class="title"><i class="fa fa-lock"></i> Connexion à EU Online</div>
+                    </div>
+                    <hr style="width: 90%;"></hr> 
+
+                    <div class="Container90" id="form_login">
+                        <div class="EmptyBox30"></div>
+                        <p:inputText value="" placeholder="Username" style="width: 100%; text-align: center;"/>
+                        <div class="EmptyBox20"></div>
+                        <p:password value="" placeholder="Password" feedback="false" style="width: 100%; text-align: center;"/>
+                        <div class="EmptyBox30"></div>
+                        <div class="Container85">
+                            <p:selectBooleanCheckbox value="accept" itemLabel="J'accepte les termes de la licence"/>
+                        </div>
+                        <div class="EmptyBox40"></div>
+                        <p:button  value="Log In" href="welcomePrimefaces.xhtml" icon="fa fa-sign-in" style="width: 100%;"/>
+                        <div class="EmptyBox40"></div>
+                        <p:link outcome="welcomePrimefaces.xhtml" value="Créer mon compte"/>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-3 ui-lg-3">
+                
+            </div>
+        </div>
+        
+        
+                
+
+        
+    </h:body>
+</html>
+
